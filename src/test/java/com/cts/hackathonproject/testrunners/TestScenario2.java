@@ -74,7 +74,7 @@ public class TestScenario2 {
         explorePageObj.selectCategoryOption(arr[1]);
         String expected = "Language Learning Online Courses | Coursera";
         String actual = driver.getTitle();
-        Assert.assertEquals(expected,actual,"The page did not open");
+        Assert.assertEquals(expected,actual,"The page did not ");
     }
 
     @Test
