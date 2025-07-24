@@ -58,6 +58,7 @@ public class LanguagesPage extends BasePage{
     public int getCount(String filtername){
         List<WebElement> listOfOptions = driver.findElements(By.xpath("(//div[@data-testid='search-filter-group-"+filtername+"']//span[@class='css-ebbjlp']/parent::span)"));
         System.out.println("List of " + filtername +" are: "+ listOfOptions.size());
+        return listOfOptions.size();
     }
 
     public void getOptions(String filtername){

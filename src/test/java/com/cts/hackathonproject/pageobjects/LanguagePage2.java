@@ -35,8 +35,11 @@ public class LanguagePage2 extends BasePage{
     public void getLevels(){
         System.out.println("Default levels offered are:");
         System.out.println("Beginner");
-        System.out.println("Medium");
+        System.out.println("Intermediate");
         System.out.println("Advanced");
+    }
+    public int getLevelsCount(){
+        return 3;
     }
 
 

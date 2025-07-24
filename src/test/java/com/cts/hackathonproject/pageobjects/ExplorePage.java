@@ -30,6 +30,10 @@ public class ExplorePage extends BasePage{
         }
     }
 
+    public int getOptionsCount(){
+        return listOfExploreCategoriesOptions.size();
+    }
+
     public boolean isElementPresent(){
         try{
             driver.findElement(By.xpath("//h1[@class=\"css-1d9oias\"]")); return true;

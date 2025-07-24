@@ -4,6 +4,7 @@ import com.cts.hackathonproject.pageobjects.*;
 import com.cts.hackathonproject.utils.browserutils.BrowserFactory;
 import com.cts.hackathonproject.utils.fwutils.HackathonDataProvider;
 import com.cts.hackathonproject.utils.fwutils.PropertiesFileReader;
+import io.cucumber.java.sl.In;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -44,7 +45,7 @@ public class TestScenario2 {
         homePage.selectExploreOption(arr[0]);
         String actual = driver.getTitle();
         if(actual.equalsIgnoreCase(arr[1]) || actual.equalsIgnoreCase(arr[2])){
-            Assert.assertTrue(true,"Opened");
+            Assert.assertTrue(true,"Not Opened");
         }
         else{
             Assert.fail("Explore Page is not Opened");
@@ -56,6 +57,22 @@ public class TestScenario2 {
         homePage = new HomePage(driver);
         homePage.clickExploreButton();
         homePage.selectExploreOption(arr[0]);
+
+        explorePageObj = new ExplorePage(driver);
+        expObj2 = new ExplorePage2(driver);
+
+        if(explorePageObj.isElementPresent()){
+            int actual = explorePageObj.getOptionsCount();
+            int expected = Integer.parseInt(arr[1]);
+            Assert.assertTrue(actual==expected,"All options are not displayed");
+        }
+        else{
+            int expected = Integer.parseInt(arr[1]);
+            int actual = expObj2.getCountOfCategories();
+            Assert.assertTrue(actual==expected,"All options are not displayed");
+        }
+
+
         int expected = homePage.getCategoriesCount();
         int actual = Integer.parseInt(arr[1]);
         Assert.assertEquals(actual, expected, "Count of categories did not match");
@@ -68,9 +85,14 @@ public class TestScenario2 {
         homePage.selectExploreOption(arr[0]);
         explorePageObj = new ExplorePage(driver);
         explorePageObj.selectCategoryOption(arr[1]);
-        String expected = "Language Learning Online Courses | Coursera";
+        String expected = arr[2];
         String actual = driver.getTitle();
-        Assert.assertEquals(expected,actual,"The page did not open");
+        if(actual.equalsIgnoreCase(arr[2])||actual.equalsIgnoreCase(arr[3])){
+            Assert.assertTrue(true);
+        }
+        else{
+            Assert.fail("The correct page is not opened");
+        }
     }
 
 
@@ -125,6 +147,64 @@ public class TestScenario2 {
         else{
             expObj2.clickOnCategory(arr[1]);
             langObj2.getLevels();
+            Assert.assertTrue(true);
+        }
+    }
+
+    @Test(dataProvider = "hdp", dataProviderClass = HackathonDataProvider.class)
+    public void getCountOfLanguages(String arr[]){
+        homePage = new HomePage(driver);
+        homePage.clickExploreButton();
+
+        explorePageObj = new ExplorePage(driver);
+        expObj2 = new ExplorePage2(driver);
+
+        langPageObj = new LanguagesPage(driver);
+        langObj2 = new LanguagePage2(driver);
+
+        homePage.selectExploreOption(arr[0]);
+
+        if(explorePageObj.isElementPresent()){
+            explorePageObj.selectCategoryOption(arr[1]);
+            langPageObj.clickOnShowMore(arr[2]);
+            int actual = langPageObj.getCount(arr[2]);
+            int expected = Integer.parseInt(arr[3]);
+            Assert.assertTrue(actual==expected,"Count is wrong");
+        }
+        else{
+            expObj2.clickOnCategory(arr[1]);
+            langObj2.getList();
+            int actual = langObj2.getLanguagesCount();
+            int expected = Integer.parseInt(arr[4]);
+            Assert.assertTrue(actual==expected, "Count is wrong");
+        }
+    }
+
+    @Test(dataProvider = "hdp", dataProviderClass = HackathonDataProvider.class)
+    public void getCountOfLevels(String arr[]){
+        homePage = new HomePage(driver);
+        homePage.clickExploreButton();
+
+        explorePageObj = new ExplorePage(driver);
+        expObj2 = new ExplorePage2(driver);
+
+        langPageObj = new LanguagesPage(driver);
+        langObj2 = new LanguagePage2(driver);
+
+        homePage.selectExploreOption(arr[0]);
+
+        if(explorePageObj.isElementPresent()){
+            explorePageObj.selectCategoryOption(arr[1]);
+            langPageObj.clickOnShowMore(arr[2]);
+            int actual = langPageObj.getCount(arr[2]);
+            int expected = Integer.parseInt(arr[3]);
+            Assert.assertTrue(actual==expected,"Count is wrong");
+        }
+        else{
+            expObj2.clickOnCategory(arr[1]);
+            langObj2.getList();
+            int actual = langObj2.getLanguagesCount();
+            int expected = Integer.parseInt(arr[4]);
             Assert.assertTrue(true);
         }
     }

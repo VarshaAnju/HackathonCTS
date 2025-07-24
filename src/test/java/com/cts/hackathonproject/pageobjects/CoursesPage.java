@@ -4,6 +4,9 @@ import com.cts.hackathonproject.utils.seleniumutils.Actionutil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +19,14 @@ public class CoursesPage extends BasePage {
     public CoursesPage(WebDriver driver){
         super(driver);
         this.driver=driver;
+        PageFactory.initElements(driver,this);
+    }
+
+    @FindBy(xpath="//h3[@class=\"cds-CommonCard-title css-6ecy9b\"]")
+    private List<WebElement> listOfCourseCards;
+
+    public int getCountOfCourses(){
+        return listOfCourseCards.size();
     }
 
     public void findFilter(String filter){
@@ -57,5 +68,36 @@ public class CoursesPage extends BasePage {
         List<String> all = new ArrayList<>(allwin);
         driver.switchTo().window(all.get(index));
     }
+
+    @FindBy(xpath="//span[@class=\"cds-Chip-label\"]")
+    private List<WebElement> listOfFiltersApplied;
+
+    public int countOfFiltersApplied(){
+        return listOfFiltersApplied.size();
+    }
+
+
+    @FindBy(xpath="(//div[@class=\"cds-119 cds-Typography-base css-h1jogs cds-121\"])[2]")
+    private WebElement ratingsElement;
+
+    @FindBy(xpath="(//div[@class=\"css-6mrk5o\"])[4]")
+    private WebElement timeElement;
+
+    @FindBy(xpath="//h1[@class='cds-119 css-1rmg2ag cds-121']")
+    private WebElement nameElement;
+
+    public String getRatings(){
+        return ratingsElement.getText();
+    }
+
+    public String getNameOfCourse(){
+        String name = nameElement.getText();
+        return name;
+    }
+
+    public String getDuration(){
+        return timeElement.getText();
+    }
+
 
 }

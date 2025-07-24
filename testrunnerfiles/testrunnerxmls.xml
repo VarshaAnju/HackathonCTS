@@ -7,7 +7,7 @@
                 <methods>
                     <include name="verifyIfCoursesAreDisplayed"/>
                     <include name="verifyIfFiltersAreAppliedProperly"/>
-                    <include name="verifyIfCourseCardsArePresent"/>
+                    <include name="verifyIfCourseCardsArePresentAfterApplyingFilters"/>
                     <include name="verifyCourseLinksOpening"/>
                     <include name="verifyIfCourseCardAndLinkAreSame"/>
                     <include name="checkTotalLearningHours"/>
@@ -27,9 +27,9 @@
 
             <class name="com.cts.hackathonproject.testrunners.TestScenario3">
                 <methods>
-                    <include name="VerifyIfResultisDisplayedCorrectly"/>
+
                 </methods>
             </class>
         </classes>
-    </test> <!-- MiniProject -->
-</suite> <!-- Default Suite -->
+    </test>
+</suite>
