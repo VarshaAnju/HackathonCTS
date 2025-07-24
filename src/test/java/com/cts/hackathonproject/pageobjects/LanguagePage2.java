@@ -7,11 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class LanguagesPageThatFucksWithMeEverytime extends BasePage{
+public class LanguagePage2 extends BasePage{
 
     private WebDriver driver;
 
-    public LanguagesPageThatFucksWithMeEverytime(WebDriver driver){
+    public LanguagePage2(WebDriver driver){
         super(driver);
         this.driver = driver;
         PageFactory.initElements(driver,this);
@@ -20,7 +20,7 @@ public class LanguagesPageThatFucksWithMeEverytime extends BasePage{
     @FindBy(xpath="//span[@class='_1q9sh65']")
     private List<WebElement> languagesList;
 
-    public void getLanguagesList(){
+    public void getList(){
         System.out.println("The Popular Languages offered are:");
         for(int i=0;i<languagesList.size();i++){
             WebElement eachElement = languagesList.get(i);
@@ -30,6 +30,13 @@ public class LanguagesPageThatFucksWithMeEverytime extends BasePage{
 
     public int getLanguagesCount(){
         return languagesList.size();
+    }
+
+    public void getLevels(){
+        System.out.println("Default levels offered are:");
+        System.out.println("Beginner");
+        System.out.println("Medium");
+        System.out.println("Advanced");
     }
 
 

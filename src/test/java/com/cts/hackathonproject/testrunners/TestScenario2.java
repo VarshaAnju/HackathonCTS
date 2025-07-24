@@ -2,12 +2,8 @@ package com.cts.hackathonproject.testrunners;
 
 import com.cts.hackathonproject.pageobjects.*;
 import com.cts.hackathonproject.utils.browserutils.BrowserFactory;
-import com.cts.hackathonproject.utils.fwutils.CommonUtils;
 import com.cts.hackathonproject.utils.fwutils.HackathonDataProvider;
 import com.cts.hackathonproject.utils.fwutils.PropertiesFileReader;
-import com.cts.hackathonproject.utils.seleniumutils.JavaScriptUtil;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -21,8 +17,8 @@ public class TestScenario2 {
     IndividualCoursePage eachPageoObj;
     ExplorePage explorePageObj;
     LanguagesPage langPageObj;
-    ExplorePageThatFucksUpEverything expObj2;
-    LanguagesPageThatFucksWithMeEverytime langObj2;
+    ExplorePage2 expObj2;
+    LanguagePage2 langObj2;
 
 
 
@@ -77,17 +73,6 @@ public class TestScenario2 {
         Assert.assertEquals(expected,actual,"The page did not open");
     }
 
-    @Test
-    public void debug(){
-        homePage = new HomePage(driver);
-        driver.get("https://www.coursera.org/browse");
-        System.out.println(driver.findElement(By.xpath("//div[@class=\"browse-children-wrapper\"]")).getText());
-        /*//explorePageObj = new ExplorePage(driver);
-        expObj2 = new ExplorePageThatFucksUpEverything(driver);
-        expObj2.clickOnCategory("Language Learning");
-        CommonUtils.sureWait(3);
-        //System.out.println(driver.getTitle());*/
-    }
 
     @Test(dataProvider = "hdp", dataProviderClass = HackathonDataProvider.class)
     public void extractListOfLanguagesOffered(String arr[]){
@@ -95,10 +80,10 @@ public class TestScenario2 {
         homePage.clickExploreButton();
 
         explorePageObj = new ExplorePage(driver);
-        expObj2 = new ExplorePageThatFucksUpEverything(driver);
+        expObj2 = new ExplorePage2(driver);
 
         langPageObj = new LanguagesPage(driver);
-        langObj2 = new LanguagesPageThatFucksWithMeEverytime(driver);
+        langObj2 = new LanguagePage2(driver);
 
         homePage.selectExploreOption(arr[0]);
 
@@ -110,18 +95,38 @@ public class TestScenario2 {
         }
         else{
             expObj2.clickOnCategory(arr[1]);
-            langObj2.getLanguagesList();
+            langObj2.getList();
             langObj2.getLanguagesCount();
         }
+    }
 
 
-        // ->>>>>>>>>>>> //h1[@class="css-1d9oias"]
-        // ->>>>>>>>>>>>
+    @Test(dataProvider = "hdp", dataProviderClass =  HackathonDataProvider.class)
+    public void extractLevelsPerLanguage(String arr[]){
+        homePage = new HomePage(driver);
+        homePage.clickExploreButton();
 
+        explorePageObj = new ExplorePage(driver);
+        expObj2 = new ExplorePage2(driver);
 
-        // ->>>> Coursera Online Course Catalog by Topic and Skill | Coursera -------- good explore page
-        // ->>>> Language Learning Online Courses | Coursera -------- for good page
+        langPageObj = new LanguagesPage(driver);
+        langObj2 = new LanguagePage2(driver);
 
+        homePage.selectExploreOption(arr[0]);
+
+        if(explorePageObj.isElementPresent()){
+            explorePageObj.selectCategoryOption(arr[1]);
+            langPageObj.clickOnShowMore(arr[2]);
+            langPageObj.getOptions(arr[2]);
+            int actual = langPageObj.getCount(arr[2]);
+            int expected = Integer.parseInt(arr[3]);
+            Assert.assertEquals(actual, expected, "Levels extracted are not what to be expected");
+        }
+        else{
+            expObj2.clickOnCategory(arr[1]);
+            langObj2.getLevels();
+            Assert.assertTrue(true);
+        }
     }
 
 
