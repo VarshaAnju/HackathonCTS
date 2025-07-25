@@ -1,5 +1,8 @@
 package com.cts.hackathonproject.pageobjects;
 
+import com.cts.hackathonproject.utils.seleniumutils.Actionutil;
+import com.cts.hackathonproject.utils.seleniumutils.JavaScriptUtil;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -54,6 +57,37 @@ public class HomePage extends BasePage{
         return count;
     }
 
+    @FindBy(xpath="//li[@class='rc-SubFooterSection__content-column-link-item lohp-rebrand']")
+    private List<WebElement> listOfCatalogElements;
+
+    /*public void clickOnDesiredCatalogElement(String elementName){
+        JavaScriptUtil.JSscrollToElement(listOfCatalogElements.get(70),driver);
+        for(int i=0;i<listOfCatalogElements.size();i++){
+            WebElement eachElement = listOfCatalogElements.get(i);
+            if(eachElement.getText().equalsIgnoreCase(elementName)){
+                Actionutil.clickOnElement(driver,eachElement);
+                //eachElement.click();
+                return;
+            }
+        }
+    }*/
+
+
+    public void clickOnDesiredCatalogElement(String elementName){
+        driver.findElement(By.linkText(elementName)).click();
+    }
+
+    public boolean isCatalogElementPresent(String elementName){
+        boolean flag = false;
+        JavaScriptUtil.JSscrollToElement(listOfCatalogElements.get(0),driver);
+        for(int i=0;i<listOfCatalogElements.size();i++){
+            WebElement eachElement = listOfCatalogElements.get(i);
+            if(eachElement.getText().equalsIgnoreCase(elementName)){
+                return true;
+            }
+        }
+        return false;
+    }
 
 
 }

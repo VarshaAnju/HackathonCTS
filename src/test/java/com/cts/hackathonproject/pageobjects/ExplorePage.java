@@ -18,8 +18,11 @@ public class ExplorePage extends BasePage{
         this.driver = driver;
     }
 
-    @FindBy(xpath="(//span[@class=\"css-drx6ax\"])")
+    @FindBy(xpath="//a[@class=\"cds-149 cds-Pill-root css-139ytkr\"]")
     private List<WebElement> listOfExploreCategoriesOptions;
+
+    /*@FindBy(xpath="(//span[@class=\"css-drx6ax\"])")
+    private List<WebElement> listOfExploreCategoriesOptions;*/
 
     public void selectCategoryOption(String categoryName){
         for(int i=0;i<listOfExploreCategoriesOptions.size();i++){

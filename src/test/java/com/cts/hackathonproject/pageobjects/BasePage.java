@@ -26,5 +26,13 @@ public abstract class BasePage {
         Actionutil.clickEnter(driver);
     }
 
+    public String getTitleOfCurrentPage(WebDriver driver){
+        return driver.getTitle();
+    }
+
+    public String getURLOfCurrentPage(WebDriver driver){
+        return driver.getCurrentUrl();
+    }
+
 
 }
