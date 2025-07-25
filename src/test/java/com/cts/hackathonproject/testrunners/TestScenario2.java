@@ -1,5 +1,6 @@
 package com.cts.hackathonproject.testrunners;
 
+import com.cts.hackathonproject.listeners.MyListeners;
 import com.cts.hackathonproject.pageobjects.*;
 import com.cts.hackathonproject.utils.browserutils.BrowserFactory;
 import com.cts.hackathonproject.utils.fwutils.HackathonDataProvider;
@@ -9,8 +10,10 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(MyListeners.class)
 public class TestScenario2 {
     private WebDriver driver;
     HomePage homePage;
@@ -38,7 +41,7 @@ public class TestScenario2 {
         }
     }
 
-    @Test(dataProvider = "hdp", dataProviderClass = HackathonDataProvider.class)
+    @Test(priority = 0, dataProvider = "hdp", dataProviderClass = HackathonDataProvider.class)
     public void verifyIfExploreCategoriesPageIsPresent(String arr[]){
         homePage = new HomePage(driver);
         homePage.clickExploreButton();
@@ -52,7 +55,7 @@ public class TestScenario2 {
         }
     }
 
-    @Test(dataProvider = "hdp", dataProviderClass = HackathonDataProvider.class)
+    @Test(priority = 1, dataProvider = "hdp", dataProviderClass = HackathonDataProvider.class)
     public void verifyIfAllOptionsAreDisplayed(String arr[]){
         homePage = new HomePage(driver);
         homePage.clickExploreButton();
@@ -78,7 +81,7 @@ public class TestScenario2 {
         Assert.assertEquals(actual, expected, "Count of categories did not match");
     }
 
-    @Test(dataProvider = "hdp", dataProviderClass = HackathonDataProvider.class)
+    @Test(priority = 2, dataProvider = "hdp", dataProviderClass = HackathonDataProvider.class)
     public void clickOnRequiredCategory(String arr[]){
         homePage = new HomePage(driver);
         homePage.clickExploreButton();
@@ -96,7 +99,7 @@ public class TestScenario2 {
     }
 
 
-    @Test(dataProvider = "hdp", dataProviderClass = HackathonDataProvider.class)
+    @Test(priority = 3, dataProvider = "hdp", dataProviderClass = HackathonDataProvider.class)
     public void extractListOfLanguagesOffered(String arr[]){
         homePage = new HomePage(driver);
         homePage.clickExploreButton();
@@ -123,7 +126,7 @@ public class TestScenario2 {
     }
 
 
-    @Test(dataProvider = "hdp", dataProviderClass =  HackathonDataProvider.class)
+    @Test(priority = 4, dataProvider = "hdp", dataProviderClass =  HackathonDataProvider.class)
     public void extractLevelsPerLanguage(String arr[]){
         homePage = new HomePage(driver);
         homePage.clickExploreButton();
@@ -151,7 +154,7 @@ public class TestScenario2 {
         }
     }
 
-    @Test(dataProvider = "hdp", dataProviderClass = HackathonDataProvider.class)
+    @Test(priority =5, dataProvider = "hdp", dataProviderClass = HackathonDataProvider.class)
     public void getCountOfLanguages(String arr[]){
         homePage = new HomePage(driver);
         homePage.clickExploreButton();
@@ -180,7 +183,7 @@ public class TestScenario2 {
         }
     }
 
-    @Test(dataProvider = "hdp", dataProviderClass = HackathonDataProvider.class)
+    @Test(priority =6, dataProvider = "hdp", dataProviderClass = HackathonDataProvider.class)
     public void getCountOfLevels(String arr[]){
         homePage = new HomePage(driver);
         homePage.clickExploreButton();

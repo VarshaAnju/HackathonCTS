@@ -1,163 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="6" failed="1" skipped="0">
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-24T12:41:09 IST" name="Default Suite" finished-at="2025-07-24T12:45:12 IST" duration-ms="243589">
+  <suite started-at="2025-07-25T12:50:57 IST" name="Default Suite" finished-at="2025-07-25T12:54:20 IST" duration-ms="202767">
     <groups>
     </groups>
-    <test started-at="2025-07-24T12:41:09 IST" name="Hackathon" finished-at="2025-07-24T12:45:12 IST" duration-ms="243589">
-      <class name="com.cts.hackathonproject.testrunners.TestScenario1">
-        <test-method is-config="true" signature="preSetUp()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario1@384ad17b]" started-at="2025-07-24T12:41:09 IST" name="preSetUp" finished-at="2025-07-24T12:41:18 IST" duration-ms="9208" status="PASS">
+    <test started-at="2025-07-25T12:50:57 IST" name="Hackathon" finished-at="2025-07-25T12:54:20 IST" duration-ms="202767">
+      <class name="com.cts.hackathonproject.testrunners.TestScenario3">
+        <test-method is-config="true" signature="preSetUp()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario3@14dd9eb7]" started-at="2025-07-25T12:50:59 IST" name="preSetUp" finished-at="2025-07-25T12:51:11 IST" duration-ms="12607" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preSetUp -->
-        <test-method signature="TC007()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario1@384ad17b]" started-at="2025-07-24T12:41:18 IST" name="TC007" finished-at="2025-07-24T12:41:18 IST" duration-ms="2" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TC007 -->
-        <test-method is-config="true" signature="postTest()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario1@384ad17b]" started-at="2025-07-24T12:41:18 IST" name="postTest" finished-at="2025-07-24T12:41:22 IST" duration-ms="3681" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- postTest -->
-        <test-method is-config="true" signature="preSetUp()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario1@384ad17b]" started-at="2025-07-24T12:41:24 IST" name="preSetUp" finished-at="2025-07-24T12:41:31 IST" duration-ms="7645" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- preSetUp -->
-        <test-method signature="checkRatings([Ljava.lang.String;)[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario1@384ad17b]" started-at="2025-07-24T12:41:31 IST" name="checkRatings" data-provider="hdp" finished-at="2025-07-24T12:42:25 IST" duration-ms="53727" status="PASS">
+        <test-method signature="checkIfEnterpriseIsPresent([Ljava.lang.String;)[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario3@14dd9eb7]" started-at="2025-07-25T12:51:11 IST" name="checkIfEnterpriseIsPresent" data-provider="hdp" finished-at="2025-07-25T12:51:18 IST" duration-ms="6955" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.String;@2cfa2c4f]]>
+                <![CDATA[[Ljava.lang.String;@40e37b06]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkRatings -->
-        <test-method is-config="true" signature="postTest()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario1@384ad17b]" started-at="2025-07-24T12:42:25 IST" name="postTest" finished-at="2025-07-24T12:42:31 IST" duration-ms="5535" status="PASS">
+        </test-method> <!-- checkIfEnterpriseIsPresent -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario3@14dd9eb7]" started-at="2025-07-25T12:51:18 IST" name="closeBrowser" finished-at="2025-07-25T12:51:19 IST" duration-ms="526" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- postTest -->
-        <test-method is-config="true" signature="preSetUp()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario1@384ad17b]" started-at="2025-07-24T12:42:31 IST" name="preSetUp" finished-at="2025-07-24T12:42:39 IST" duration-ms="8585" status="PASS">
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="preSetUp()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario3@14dd9eb7]" started-at="2025-07-25T12:51:19 IST" name="preSetUp" finished-at="2025-07-25T12:51:29 IST" duration-ms="10519" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preSetUp -->
-        <test-method signature="checkTotalLearningHours([Ljava.lang.String;)[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario1@384ad17b]" started-at="2025-07-24T12:42:39 IST" name="checkTotalLearningHours" data-provider="hdp" finished-at="2025-07-24T12:43:32 IST" duration-ms="53284" status="PASS">
+        <test-method signature="debug()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario3@14dd9eb7]" started-at="2025-07-25T12:51:29 IST" name="debug" finished-at="2025-07-25T12:51:52 IST" duration-ms="22431" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- debug -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario3@14dd9eb7]" started-at="2025-07-25T12:51:52 IST" name="closeBrowser" finished-at="2025-07-25T12:51:53 IST" duration-ms="1470" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="preSetUp()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario3@14dd9eb7]" started-at="2025-07-25T12:51:53 IST" name="preSetUp" finished-at="2025-07-25T12:52:04 IST" duration-ms="11094" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preSetUp -->
+        <test-method signature="verifyClickActionOnForEnterpriseOption([Ljava.lang.String;)[pri:1, instance:com.cts.hackathonproject.testrunners.TestScenario3@14dd9eb7]" started-at="2025-07-25T12:52:04 IST" name="verifyClickActionOnForEnterpriseOption" data-provider="hdp" finished-at="2025-07-25T12:52:19 IST" duration-ms="14893" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.String;@75de6341]]>
+                <![CDATA[[Ljava.lang.String;@67332b1e]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkTotalLearningHours -->
-        <test-method is-config="true" signature="postTest()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario1@384ad17b]" started-at="2025-07-24T12:43:32 IST" name="postTest" finished-at="2025-07-24T12:43:38 IST" duration-ms="5354" status="PASS">
+        </test-method> <!-- verifyClickActionOnForEnterpriseOption -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario3@14dd9eb7]" started-at="2025-07-25T12:52:19 IST" name="closeBrowser" finished-at="2025-07-25T12:52:20 IST" duration-ms="348" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- postTest -->
-        <test-method signature="verifyCourseLinksOpening([Ljava.lang.String;)[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario1@384ad17b]" started-at="2025-07-24T12:43:38 IST" name="verifyCourseLinksOpening" finished-at="2025-07-24T12:43:38 IST" duration-ms="0" status="FAIL">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Cannot inject @Test annotated Method [verifyCourseLinksOpening] with [class [Ljava.lang.String;].
-For more information on native dependency injection please refer to https://testng.org/#_dependency_injection]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Cannot inject @Test annotated Method [verifyCourseLinksOpening] with [class [Ljava.lang.String;].
-For more information on native dependency injection please refer to https://testng.org/#_dependency_injection
-at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:442)
-at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:347)
-at org.testng.internal.Parameters.createParameters(Parameters.java:699)
-at org.testng.internal.Parameters.handleParameters(Parameters.java:885)
-at org.testng.internal.Parameters.handleParameters(Parameters.java:734)
-at org.testng.internal.invokers.ParameterHandler.handleParameters(ParameterHandler.java:72)
-at org.testng.internal.invokers.ParameterHandler.createParameters(ParameterHandler.java:51)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:949)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:65)
-at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:105)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCourseLinksOpening -->
-        <test-method is-config="true" signature="preSetUp()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario1@384ad17b]" started-at="2025-07-24T12:43:38 IST" name="preSetUp" finished-at="2025-07-24T12:43:44 IST" duration-ms="6206" status="PASS">
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="preSetUp()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario3@14dd9eb7]" started-at="2025-07-25T12:52:20 IST" name="preSetUp" finished-at="2025-07-25T12:52:32 IST" duration-ms="11853" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preSetUp -->
-        <test-method signature="verifyIfCourseCardsArePresentAfterApplyingFilters([Ljava.lang.String;)[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario1@384ad17b]" started-at="2025-07-24T12:43:44 IST" name="verifyIfCourseCardsArePresentAfterApplyingFilters" data-provider="hdp" finished-at="2025-07-24T12:44:04 IST" duration-ms="19657" status="PASS">
+        <test-method signature="clickOnForEnterpriseOption([Ljava.lang.String;)[pri:2, instance:com.cts.hackathonproject.testrunners.TestScenario3@14dd9eb7]" started-at="2025-07-25T12:52:32 IST" name="clickOnForEnterpriseOption" data-provider="hdp" finished-at="2025-07-25T12:52:49 IST" duration-ms="17265" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.String;@43982337]]>
+                <![CDATA[[Ljava.lang.String;@5ba90d8a]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyIfCourseCardsArePresentAfterApplyingFilters -->
-        <test-method is-config="true" signature="postTest()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario1@384ad17b]" started-at="2025-07-24T12:44:04 IST" name="postTest" finished-at="2025-07-24T12:44:08 IST" duration-ms="4231" status="PASS">
+        </test-method> <!-- clickOnForEnterpriseOption -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario3@14dd9eb7]" started-at="2025-07-25T12:52:49 IST" name="closeBrowser" finished-at="2025-07-25T12:52:49 IST" duration-ms="372" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- postTest -->
-        <test-method is-config="true" signature="preSetUp()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario1@384ad17b]" started-at="2025-07-24T12:44:08 IST" name="preSetUp" finished-at="2025-07-24T12:44:15 IST" duration-ms="6862" status="PASS">
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="preSetUp()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario3@14dd9eb7]" started-at="2025-07-25T12:52:49 IST" name="preSetUp" finished-at="2025-07-25T12:53:00 IST" duration-ms="10489" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preSetUp -->
-        <test-method signature="verifyIfCoursesAreDisplayed([Ljava.lang.String;)[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario1@384ad17b]" started-at="2025-07-24T12:44:15 IST" name="verifyIfCoursesAreDisplayed" data-provider="hdp" finished-at="2025-07-24T12:44:27 IST" duration-ms="11765" status="PASS">
+        <test-method signature="verifyFormPresenceInEnterprisePage([Ljava.lang.String;)[pri:3, instance:com.cts.hackathonproject.testrunners.TestScenario3@14dd9eb7]" started-at="2025-07-25T12:53:00 IST" name="verifyFormPresenceInEnterprisePage" data-provider="hdp" finished-at="2025-07-25T12:53:15 IST" duration-ms="14838" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.String;@7cf78c85]]>
+                <![CDATA[[Ljava.lang.String;@c1e14f]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyIfCoursesAreDisplayed -->
-        <test-method is-config="true" signature="postTest()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario1@384ad17b]" started-at="2025-07-24T12:44:27 IST" name="postTest" finished-at="2025-07-24T12:44:30 IST" duration-ms="3811" status="PASS">
+        </test-method> <!-- verifyFormPresenceInEnterprisePage -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario3@14dd9eb7]" started-at="2025-07-25T12:53:15 IST" name="closeBrowser" finished-at="2025-07-25T12:53:15 IST" duration-ms="361" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- postTest -->
-        <test-method is-config="true" signature="preSetUp()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario1@384ad17b]" started-at="2025-07-24T12:44:31 IST" name="preSetUp" finished-at="2025-07-24T12:44:38 IST" duration-ms="7927" status="PASS">
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="preSetUp()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario3@14dd9eb7]" started-at="2025-07-25T12:53:15 IST" name="preSetUp" finished-at="2025-07-25T12:53:27 IST" duration-ms="11663" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preSetUp -->
-        <test-method signature="verifyIfFiltersAreAppliedProperly([Ljava.lang.String;)[pri:1, instance:com.cts.hackathonproject.testrunners.TestScenario1@384ad17b]" started-at="2025-07-24T12:44:38 IST" name="verifyIfFiltersAreAppliedProperly" data-provider="hdp" finished-at="2025-07-24T12:45:08 IST" duration-ms="29475" status="PASS">
+        <test-method signature="validateMandatoryFieldErrorOnFormBasedOnEmail([Ljava.lang.String;)[pri:5, instance:com.cts.hackathonproject.testrunners.TestScenario3@14dd9eb7]" started-at="2025-07-25T12:53:27 IST" name="validateMandatoryFieldErrorOnFormBasedOnEmail" data-provider="hdp" finished-at="2025-07-25T12:53:47 IST" duration-ms="20615" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[Ljava.lang.String;@14c93774]]>
+                <![CDATA[[Ljava.lang.String;@446e7065]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyIfFiltersAreAppliedProperly -->
-        <test-method is-config="true" signature="postTest()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario1@384ad17b]" started-at="2025-07-24T12:45:08 IST" name="postTest" finished-at="2025-07-24T12:45:12 IST" duration-ms="4366" status="PASS">
+        </test-method> <!-- validateMandatoryFieldErrorOnFormBasedOnEmail -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario3@14dd9eb7]" started-at="2025-07-25T12:53:47 IST" name="closeBrowser" finished-at="2025-07-25T12:53:48 IST" duration-ms="545" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- postTest -->
-      </class> <!-- com.cts.hackathonproject.testrunners.TestScenario1 -->
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="preSetUp()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario3@14dd9eb7]" started-at="2025-07-25T12:53:48 IST" name="preSetUp" finished-at="2025-07-25T12:53:59 IST" duration-ms="10865" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preSetUp -->
+        <test-method signature="validateMandatoryFieldErrorOnFormBasedOnPhoneNumber([Ljava.lang.String;)[pri:6, instance:com.cts.hackathonproject.testrunners.TestScenario3@14dd9eb7]" started-at="2025-07-25T12:53:59 IST" name="validateMandatoryFieldErrorOnFormBasedOnPhoneNumber" data-provider="hdp" finished-at="2025-07-25T12:54:19 IST" duration-ms="20167" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.String;@69ec93c2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateMandatoryFieldErrorOnFormBasedOnPhoneNumber -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.cts.hackathonproject.testrunners.TestScenario3@14dd9eb7]" started-at="2025-07-25T12:54:19 IST" name="closeBrowser" finished-at="2025-07-25T12:54:20 IST" duration-ms="611" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- com.cts.hackathonproject.testrunners.TestScenario3 -->
     </test> <!-- Hackathon -->
   </suite> <!-- Default Suite -->
 </testng-results>

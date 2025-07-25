@@ -25,6 +25,9 @@ public class CoursesPage extends BasePage {
     @FindBy(xpath="//h3[@class=\"cds-CommonCard-title css-6ecy9b\"]")
     private List<WebElement> listOfCourseCards;
 
+    @FindBy(xpath="//h3[@class=\"cds-CommonCard-title css-6ecy9b\"]")
+    private List<WebElement> nameOfCourseCard;
+
     public int getCountOfCourses(){
         return listOfCourseCards.size();
     }
@@ -76,28 +79,11 @@ public class CoursesPage extends BasePage {
         return listOfFiltersApplied.size();
     }
 
-
-    @FindBy(xpath="(//div[@class=\"cds-119 cds-Typography-base css-h1jogs cds-121\"])[2]")
-    private WebElement ratingsElement;
-
-    @FindBy(xpath="(//div[@class=\"css-6mrk5o\"])[4]")
-    private WebElement timeElement;
-
-    @FindBy(xpath="//h1[@class='cds-119 css-1rmg2ag cds-121']")
-    private WebElement nameElement;
-
-    public String getRatings(){
-        return ratingsElement.getText();
+    public String getCourseCardName(int index){
+        return nameOfCourseCard.get(index).getText();
     }
 
-    public String getNameOfCourse(){
-        String name = nameElement.getText();
-        return name;
-    }
 
-    public String getDuration(){
-        return timeElement.getText();
-    }
 
 
 }

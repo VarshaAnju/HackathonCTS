@@ -1,5 +1,6 @@
 package com.cts.hackathonproject.testrunners;
 
+import com.cts.hackathonproject.listeners.MyListeners;
 import com.cts.hackathonproject.pageobjects.CoursesPage;
 import com.cts.hackathonproject.pageobjects.HomePage;
 import com.cts.hackathonproject.pageobjects.IndividualCoursePage;
@@ -15,12 +16,13 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-
+@Listeners(MyListeners.class)
 public class TestScenario1 {
 
     private WebDriver driver;
@@ -88,25 +90,27 @@ public class TestScenario1 {
 
     }
 
-    @Test
+    @Test(dataProvider = "hdp", dataProviderClass = HackathonDataProvider.class)
     public void verifyCourseLinksOpening(String arr[]){
         homePage = new HomePage(driver);
         coursesPageObj = new CoursesPage(driver);
         homePage.giveSearchKeyword(arr[0]);
         homePage.clickSearchButton();
-        int noOfFilters = Integer.parseInt(arr[1]); int k=0;
-        for(int i=0;i<noOfFilters;i++){
-            coursesPageObj.findFilter(arr[2+k]);
-            coursesPageObj.clickOnFilter(arr[2+k], arr[3+k]);
-            CommonUtils.sureWait(5);
-            k=k+2;
-        }
         CommonUtils.sureWait(4);
-        int courseCardsCount = Integer.parseInt(arr[6]);
-        for(int i=1;i<=courseCardsCount;i++){
-            coursesPageObj.clickOnCourseCard(i);
-        }
+
+        coursesPageObj.clickOnCourseCard(1);
+
+        String actual = homePage.getTitleOfCurrentPage(driver);
+        Set<String> allwin = driver.getWindowHandles();
+        List<String> all = new ArrayList<>(allwin);
+
+        driver.switchTo().window(all.get(1));
+        CommonUtils.sureWait(5);
+        String expected = arr[6];
+        Assert.assertTrue(!(actual.equalsIgnoreCase(expected)), "Course link not opened correctly");
     }
+
+
 
 
     @Test(dataProvider = "hdp", dataProviderClass = HackathonDataProvider.class)
@@ -128,6 +132,8 @@ public class TestScenario1 {
             coursesPageObj.clickOnCourseCard(i);
         }
 
+        eachPageoObj = new IndividualCoursePage(driver);
+
         try{
             for (int i=1;i<=courseCardsCount;i++){
                 Set<String> allwin = driver.getWindowHandles();
@@ -135,10 +141,10 @@ public class TestScenario1 {
 
                 driver.switchTo().window(all.get(i));
                 CommonUtils.sureWait(3);
-                String name = coursesPageObj.getNameOfCourse();
+                String name = eachPageoObj.getNameOfCourse();
                 System.out.println("Course : "+ name);
                 JavaScriptUtil.JScrollByPixelValue(driver,250);
-                String tim = coursesPageObj.getDuration();
+                String tim = eachPageoObj.getDuration();
                 System.out.println("Learning Hours 0f Course "+i+" is "+ tim);
                 driver.switchTo().window(all.get(0));
                 Assert.assertTrue(true);
@@ -152,6 +158,7 @@ public class TestScenario1 {
     @Test(dataProvider = "hdp", dataProviderClass = HackathonDataProvider.class)
     public void checkRatings(String arr[]){
         homePage = new HomePage(driver);
+        eachPageoObj = new IndividualCoursePage(driver);
         coursesPageObj = new CoursesPage(driver);
         homePage.giveSearchKeyword(arr[0]);
         homePage.clickSearchButton();
@@ -175,10 +182,10 @@ public class TestScenario1 {
 
                 driver.switchTo().window(all.get(i));
                 CommonUtils.sureWait(3);
-                String name = coursesPageObj.getNameOfCourse();
+                String name = eachPageoObj.getNameOfCourse();
                 System.out.println("Course : "+ name);
                 JavaScriptUtil.JScrollByPixelValue(driver,250);
-                String rating = coursesPageObj.getRatings();
+                String rating = eachPageoObj.getRatings();
                 System.out.println("Ratings of course "+ i+ ": "+ rating);
                 driver.switchTo().window(all.get(0));
             }
@@ -190,8 +197,30 @@ public class TestScenario1 {
 
     }
 
-    @Test
-    public void TC007(){
+    @Test(dataProvider = "hdp", dataProviderClass = HackathonDataProvider.class)
+    public void verifyIfCourseCardAndLinkAreSame(String arr[]){
+        homePage = new HomePage(driver);
+        coursesPageObj = new CoursesPage(driver);
+        eachPageoObj = new IndividualCoursePage(driver);
+        homePage.giveSearchKeyword(arr[0]);
+        homePage.clickSearchButton();
+        int noOfFilters = Integer.parseInt(arr[1]); int k=0;
+        for(int i=0;i<noOfFilters;i++){
+            coursesPageObj.findFilter(arr[2+k]);
+            coursesPageObj.clickOnFilter(arr[2+k], arr[3+k]);
+            CommonUtils.sureWait(5);
+            k=k+2;
+        }
+        CommonUtils.sureWait(4);
+        String cardName = coursesPageObj.getCourseCardName(0);
+        coursesPageObj.clickOnCourseCard(1);
+
+        Set<String> allwin = driver.getWindowHandles();
+        List<String> all = new ArrayList<>(allwin);
+        driver.switchTo().window(all.get(1));
+        CommonUtils.sureWait(3);
+        String pageName = eachPageoObj.getNameOfCourse();
+        Assert.assertTrue(cardName.equalsIgnoreCase(pageName),"Not same");
 
     }
 
