@@ -189,11 +189,20 @@ public class BrowserFactory {
         ChromeOptions chromeOptions = new ChromeOptions();
         EdgeOptions edgeOptions=new EdgeOptions();
         chromeOptions.addArguments("--disable-notifications");
+        chromeOptions.addArguments("--incognito");
         chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
         chromeOptions.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
         edgeOptions.addArguments("--disable-notifications");
         edgeOptions.addArguments("--disable-blink-features=AutomationControlled");
         edgeOptions.setExperimentalOption("excludeSwitches", new String[] { "enable-automation" });
+        //Removes the "enable-automation" switch, which is usually present in browsers launched by Selenium. This helps avoid detection by websites that block bots.
+
+//Disables the Selenium automation extension, another fingerprint websites use to detect automation.
+        chromeOptions.setExperimentalOption("useAutomationExtension", false);
+//Disables certain Blink features (Chrome's rendering engine) that reveal automation control.
+//Disables certain Blink features (Chrome's rendering engine) that reveal automation control.
+        chromeOptions.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                + "(KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36");
         DesiredCapabilities dc = new DesiredCapabilities();
         switch (bn.intern().toLowerCase()) {
             case "chrome":

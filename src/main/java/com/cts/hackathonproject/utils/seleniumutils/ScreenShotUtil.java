@@ -16,6 +16,14 @@ public class ScreenShotUtil {
 
     }
 
+    public static String takeScreenShot(WebDriver driver, String testName) {
+        TakesScreenshot tss = (TakesScreenshot) driver;
+        File src = tss.getScreenshotAs(OutputType.FILE);
+        File dest = new File("screenshots/" + testName + "_" + CommonUtils.getCurrentDate()+ ".png");
+        src.renameTo(dest);
+        return testName;
+    }
+
     public static void takesScreenShots(WebDriver driver) throws IOException {
         TakesScreenshot tss = (TakesScreenshot) driver;
         File src = tss.getScreenshotAs(OutputType.FILE);
